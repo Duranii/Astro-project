@@ -55,7 +55,7 @@ const {
       {
         data.map((item, index) => (
           <div
-            class={`px-6 sm:px-8 py-6 lg:py-3 border rounded-xl border-[#E4E7EC] mb-4 ${index === 0 ? "max-lg:bg-[#0B4FF7]" : ""}`}
+            class="px-6 sm:px-8 py-6 lg:py-3 border rounded-xl border-[#E4E7EC] mb-4"
           >
             <a class="flex justify-between items-center sm:justify-end">
               <h3
@@ -63,9 +63,22 @@ const {
                 set:html={item.title}
               />
               <div
-                class={`px-[5.4px] text-white rounded-lg bg-[#0B4FF7] transition-all duration-200 transform hover:scale-110 cursor-pointer ${index === 0 ? "max-lg:text-[#0B4FF7] max-lg:bg-[#F0F6FF]" : ""} hover:bg-[#F0F6FF] hover:text-[#0B4FF7]`}
+                class={`p-[5.4px] text-white rounded-lg bg-[#0B4FF7] transition-all duration-200 transform hover:scale-110 cursor-pointer ${index === 0 ? "max-lg:text-[#0B4FF7] max-lg:bg-[#F0F6FF]" : ""} hover:bg-[#F0F6FF] hover:text-[#0B4FF7]`}
               >
-                &#129125;
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.22877 8.77123L8.77124 1.22876M8.77124 1.22876L8.77124 6.88562M8.77124 1.22876L3.11439 1.22876"
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </div>
             </a>
 
