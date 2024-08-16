@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import defenseIcon from "../assets/defenseIcon.svg";
+
+const data = [
+  {
+    tableHeading: "GCC High & Azure Government ",
+    tabledescription:
+      "Agile IT has been a provider of Microsoft GCC High and Azure Government licensing since 2019",
+  },
+  {
+    tableHeading: "Onboarding & Migrations ",
+    tabledescription:
+      "Move into a FedRAMP High equivalent environment with GCC High",
+  },
+  {
+    tableHeading: "Managed Services",
+    tabledescription:
+      " Leverage the Microsoft cloud to enhance security and reporting requirements within CMMC",
+  },
+];
+
+const {
+  title = "Solutions for the Defense Industrial Base",
+  tableData = data,
+} = Astro.props;
+---
+
+<div class="py-16 md:py-24 xl:max-w-[1216px] mx-auto max-sm:pl-4 sm:px-10 xl:px-0 max-w-full">
+  <div class="border-b lg:border lg:rounded-xl border-neutral-200">
+    <div class="flex justify-center lg:pt-10">
+      <svg
+        width="37"
+        height="46"
+        viewBox="0 0 37 46"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16.8803 21.4834V0.565186L0.261536 8.08531V21.4834L16.8803 21.4834ZM36.2198 8.08531L19.6013 0.565186V21.4834H36.2198V8.08531ZM19.6013 45.5652C20.9647 44.694 24.2112 42.4939 27.4919 39.3521C29.9933 36.9571 31.9922 34.5088 33.4333 32.0756C35.0017 29.4279 35.9141 26.7868 36.1549 24.2047H19.6013L19.6013 45.5652ZM0.326645 24.2047C0.567535 26.7868 1.47963 29.4279 3.04788 32.0756C4.48928 34.5088 6.48855 36.9571 8.98956 39.3521C12.2703 42.4939 15.5168 44.6939 16.8802 45.5652V24.2047H0.326645Z"
+          fill="#F7B30B"></path>
+      </svg>
+    </div>
+
+    <div>
+      <p
+        class="pt-[30px] font-bold text-2xl lg:text-4xl text-[#202B37] text-center"
+        set:html={title}
+      />
+
+      <div class="grid sm:grid-cols-3 max-sm:grid-flow-col max-sm:auto-cols-[minmax(300px,1fr)] lg:px-7 xl:px-[60px] max-sm:overflow-x-auto">
+        {
+          data?.map((item, index) => (
+            <div class="lg:pt-12">
+              <h3
+                class={`min-h-[100px] lg:min-h-0 py-6 lg:py-10 font-medium lg:font-bold text-base lg:text-xl text-center text-[#202B37] border-b border-[#E4E7EC] ${ index ===1 ? "lg:rounded-t-lg lg:bg-[#F9FAFB]" : "" }`}
+                set:html={item.tableHeading}
+              />
+              <p class={`min-h-20 lg:min-h-0 py-4 lg:py-[41px] px-5 lg:px-[8.67px] font-normal text-sm lg:text-xl text-[#344051] text-center ${ index === 1 ? "lg:border-x border-[#E4E7EC]" : "" }`} set:html={item.tabledescription} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

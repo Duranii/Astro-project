@@ -1,0 +1,93 @@
+---
+import Image from "astro/components/Image.astro";
+import SpecializedSolutionImage from "../assets/specialized-solution-image.png";
+
+const data = [
+  {
+    title: "Government Contractors",
+    description:
+      "GCC High is designed to meet the stringent security and compliance requirements of federal regulations, such as DFARS and ITAR. These regulations mandate a higher level of data protection and control. Agile IT can help protect your sensitive data and maintain a secure and compliant IT environment.",
+  },
+  {
+    title: "Mergers and Acquisitions",
+    description:
+      "Going through a merger or acquisition is a large undertaking when it comes to your IT environment. Agile IT has expertise in architecture design and planning, due diligence, security considerations, integration planning, and execution.",
+  },
+  {
+    title: "Divestitures",
+    description:
+      "Departing organizations often have massive changes, decision making, and immediate needs. Agile IT can help with strategic planning and due diligence to maintain business continuity for both the divesting and remaining organization(s).",
+  },
+  {
+    title: "Complex Identity Environment",
+    description:
+      "Often complex Identity scenarios are the result of mergers & acquisitions or divestitures but can also be the result of strategic business decisions.  Maintaining multiple Active Directory domains and Entra ID tenants requires thoughtful planning and design to ensure minimal impacts to user productivity.",
+  },
+];
+
+const {
+  title = "Specialized Solutions",
+  description = "Some problems require specialized solutions & experienced experts who understand and pay special attention to regulatory requirements, complex environments & identities, or overlapping services that require consolidation. Agile IT has the expertise to assist with your unique scenario.",
+  solutionsData = data,
+} = Astro.props;
+---
+
+<div
+  class="pt-14 lg:pt-0 xl:max-w-[1216px] mx-auto px-4 sm:px-10 xl:px-0 max-w-full max-lg:bg-[#f9fafb]"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-2">
+    <div class="pr-0 lg:pr-16">
+      <h1
+        class="font-semibold lg:font-bold text-2xl sm:text-[32px] lg:text-4xl text-center sm:text-left text-[#202B37]"
+        set:html={title}
+      />
+      <p
+        class="pt-4 font-normal text-base sm:text-xl text-center sm:text-left text-[#344051]"
+        set:html={description}
+      />
+      <Image
+        class="img-resize pt-8 h-[400px] sm:h-[555px] lg:h-auto"
+        src={SpecializedSolutionImage}
+        alt="Image"
+      />
+    </div>
+    <div class="pt-6 sm:pt-16 lg:pt-0">
+      {
+        data.map((item, index) => (
+          <div
+            class={`px-6 sm:px-8 py-6 lg:py-3 border rounded-xl border-[#E4E7EC] mb-4 ${index === 0 ? "max-lg:bg-[#0B4FF7]" : ""}`}
+          >
+            <a class="flex justify-between items-center sm:justify-end">
+              <h3
+                class={`font-semibold text-xl text-[#202B37] block sm:hidden transition-colors duration-200 ${index === 0 ? "max-lg:text-white" : ""} group-hover:text-[#0B4FF7]`}
+                set:html={item.title}
+              />
+              <div
+                class={`px-[5.4px] text-white rounded-lg bg-[#0B4FF7] transition-all duration-200 transform hover:scale-110 cursor-pointer ${index === 0 ? "max-lg:text-[#0B4FF7] max-lg:bg-[#F0F6FF]" : ""} hover:bg-[#F0F6FF] hover:text-[#0B4FF7]`}
+              >
+                &#129125;
+              </div>
+            </a>
+
+            <h3
+              class={`pt-[10px] font-bold text-xl text-[#202B37] hidden sm:block ${index === 0 ? "max-lg:text-white" : ""}`}
+              set:html={item.title}
+            />
+            <p
+              class={`pt-[10px] font-normal text-base text-[#344051] ${index === 0 ? "max-lg:text-white" : ""}`}
+              set:html={item.description}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  @media screen and (max-width: 400px) {
+    .img-resize {
+      height: 241px;
+    }
+  }
+</style>

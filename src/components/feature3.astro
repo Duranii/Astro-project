@@ -1,0 +1,126 @@
+---
+const data = [
+  {
+    title: "Licensing",
+    description:
+      "Expert guidance on Microsoft licensing and Azure cost management to reduce wasteful costs and assist with budgeting.",
+    ctaButton: "See how we can save you money",
+  },
+  {
+    title: "Strategy & Guidance",
+    description:
+      "Continued focus and improvement in your business with a true partnership.",
+    ctaButton: "A true IT partnership is a competitive advantage",
+  },
+  {
+    title: "Security & Compliance",
+    description:
+      "Achieve a strong posture and meeting compliance with experience and ongoing improvements.",
+    ctaButton: "Security & Compliance isn't an option, but a lifestyle",
+  },
+  {
+    title: "Managed Services",
+    description:
+      "Proactive Cloud-Managed Services and Security for Uninterrupted Business Growth.",
+    ctaButton: "We focus on IT and you focus on business",
+  },
+  {
+    title: "Migrations",
+    description:
+      "From identity, email, & files to servers, applications, and data.",
+    ctaButton: "Checkout our portfolio of migration services",
+  }
+];
+
+const {
+  heading = "Our Services",
+  description = "Staying ahead of the competition and avoiding disruption is key to every organization. Our proven path to digital transformation has been tested and refined for over 15 years. Our culture and Microsoft focus drives results with Microsoft 365, Azure, Power Platform, and more.",
+  servicesData = data,
+} = Astro.props;
+---
+
+<div
+  class="py-14 lg:py-24 xl:max-w-[1216px] mx-auto px-4 sm:px-10 xl:px-0 max-w-full max-lg:bg-[#f9fafb]"
+>
+  <div class="grid gap-6 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div>
+      <h1 class="font-bold text-2xl sm:text-[32px] lg:text-4xl max-sm:text-center text-[#202B37]" set:html={heading} />
+      <p
+        class="pt-4 font-normal text-base sm:text-xl max-sm:text-center text-[#344051]"
+        set:html={description}
+      />
+    </div>
+    {
+      data.map((item, index) => (
+        <div class="p-6 border rounded-[10px] border-[#E4E7EC]">
+          <div class="p-[10px] rounded-[10px] bg-[#0B4FF7] w-fit">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.7382 19.2054C9.84368 19.2054 9.11584 19.9332 9.11584 20.8279C9.11584 21.7225 9.84368 22.4503 10.7382 22.4503C11.6328 22.4503 12.3606 21.7224 12.3606 20.8279C12.3606 19.9333 11.6328 19.2054 10.7382 19.2054Z"
+                fill="white"
+              />
+              <path
+                d="M16.6113 23.3309H18.0865V20.4847C18.0865 19.5151 17.8728 18.5826 17.4684 17.7881C17.197 17.2548 17.0536 16.6549 17.0536 16.0534C17.0536 13.9407 18.7727 12.2217 20.8845 12.221V0H0.592041V27.9999H12.8009V27.1412C12.8009 25.0402 14.5102 23.3309 16.6113 23.3309ZM4.27967 3.85077H17.1967V5.49139H4.27967V3.85077ZM4.27967 7.13223H17.1967V8.77286H4.27967V7.13223ZM4.27967 10.4137H17.1967V12.0543H4.27967V10.4137ZM4.27967 13.6951H10.7382V15.3357H4.27967V13.6951ZM7.47523 20.8278C7.47523 19.0286 8.93899 17.5647 10.7382 17.5647C12.5374 17.5647 14.0013 19.0285 14.0013 20.8278C14.0013 22.6271 12.5374 24.0908 10.7382 24.0908C8.93899 24.0908 7.47523 22.627 7.47523 20.8278Z"
+                fill="white"
+              />
+              <path
+                d="M25.2383 24.9715H22.0447V20.355C22.0447 19.184 22.3161 18.047 22.8295 17.0666C23.0132 16.7158 23.0976 16.3183 23.0736 15.917C23.0061 14.7927 22.1058 13.9099 20.9794 13.8635C20.9482 13.8623 20.9171 13.8616 20.8859 13.8616C19.6774 13.8616 18.6942 14.8449 18.6942 16.0533C18.6942 16.4024 18.7738 16.7357 18.9307 17.044C19.4517 18.0678 19.7271 19.2576 19.7271 20.4847V24.9715H16.6112C15.4148 24.9715 14.4415 25.9448 14.4415 27.1412V28H27.4081V27.1412C27.408 25.9448 26.4347 24.9715 25.2383 24.9715Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <h3
+            class="pt-8 sm:pt-10 font-medium text-base sm:text-[18px] text-[#202B37]"
+            set:html={item.title}
+          />
+          <p
+            class="text-adjustment min-h-20 sm:min-h-32 md:min-h-28 lg:min-h-32 xl:min-h-28 pt-4 font-normal text-base text-[#344051]"
+            set:html={item.description}
+          />
+          <a class="flex gap-2 group">
+            <button
+              class="font-medium text-sm text-[#0B4FF7] text-left"
+              set:html={item.ctaButton}
+            />
+            <div class="pt-[6px] transition-transform duration-300 group-hover:translate-x-2">
+              <svg
+                width="16"
+                height="12"
+                viewBox="0 0 16 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.33329 6L14.6666 6M14.6666 6L9.66663 11M14.6666 6L9.66663 1"
+                  stroke="#0B4FF7"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+    @media screen and (max-width: 450px) {
+        .text-adjustment{
+            min-height: 112px;
+        }
+    }
+    @media screen and (max-width: 370px) {
+        .text-adjustment{
+            min-height: 128px;
+        }
+    }
+</style>
